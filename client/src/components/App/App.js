@@ -1,21 +1,22 @@
 import React from 'react';
 import './App.css';
 import Home from '../Home/Home'
-import About from "../About/About";
-import Header from '../common/header'
-import { Switch, Route} from 'react-router';
-import {BrowserRouter} from 'react-router-dom'
-class App extends React.Component{
+import Welcome from "../Welcome/Welcome";
+import Header from '../common/Header';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+
+class App extends React.Component {
     render() {
+
         return (
             <div className="App">
-                <Header/>
-                <BrowserRouter>
+                <Header />
+                <Router>
                     <Switch>
                         <Route exact path='/' component={Home}/>
-                        <Route route='/about' component={About}/>
+                        <Route path='/welcomeUser' component={Welcome}/>
                     </Switch>
-                </BrowserRouter>
+                </Router>
             </div>
         );
     }
